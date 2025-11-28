@@ -15,6 +15,7 @@ on:
         options:
           - stable-susfs
           - wip-susfs
+          - wip-sukisu
       KERNEL_TREE_BRANCH_2:
         description: 'Kernel Tree Branch (NEXT)'
         default: 'wip-next'
