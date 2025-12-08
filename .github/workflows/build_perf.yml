@@ -118,7 +118,7 @@ jobs:
           /# CONFIG_LTO_NONE is not set/c\# CONFIG_LTO_NONE is not set
           /CONFIG_LTO_CLANG_FULL=y/c\# CONFIG_LTO_CLANG_FULL is not set
           /# CONFIG_LTO_CLANG_THIN is not set/c\CONFIG_LTO_CLANG_THIN=y
-          ' arch/arm64/configs/vendor/munch_defconfig
+          ' arch/arm64/configs/vendor/kona-perf_defconfig
 
       - name: Apply Configurations
         run: |
@@ -168,7 +168,7 @@ jobs:
           export SUBARCH=arm64
           export KBUILD_BUILD_USER="Kenskuyy"
           export KBUILD_BUILD_HOST="Github"
-          export KBUILD_BUILD_TIMESTAMP="$(TZ=Asia/Jakarta date)"
+          export KBUILD_BUILD_TIMESTAMP="$(TZ=Asia/Jakarta date +'%Y-%m-%d %H:%M:%S')"
           
           cd kernel_tree
           
@@ -180,8 +180,6 @@ jobs:
             LLVM_IAS=1 \
             LLVM=1 \
             LLVM_IAS=1
-
-          # Manually generate dtbo.img (Removed, build system should handle it)
 
       - name: Check Artifacts
         run: |
